@@ -4,8 +4,8 @@ const { CityService } = require('../services');
 const { SuccessResponse, ErrorResponse } = require('../utils/common');
 
 /**
-* POST : /airplanes
-* req-body {modelNUmber: 'airbus320', capacity: 200}
+* POST : /cities
+* req-body {name:'xyz'}
 */
 
 async function createCity(req, res) {
