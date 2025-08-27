@@ -8,8 +8,8 @@ const airplaneRepository = new AirplaneRepository();
 
 async function createAirplane(data){
     try {
-        const airplane = await airplaneRepository.create(data);
-        return airplane;
+        const response = await airplaneRepository.create(data);
+        return response;
     } 
     catch(error){
         if(error.name == 'SequelizeValidationError') {
