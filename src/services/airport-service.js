@@ -19,7 +19,7 @@ async function createAirport(data){
             });
             throw new AppError(explanation,StatusCodes.BAD_REQUEST);
         }
-        throw new AppError('Canot create a new airport object', StatusCodes.INTERNAL_SERVER_ERROR);
+        throw new AppError('Canot create a new airport object from services', StatusCodes.INTERNAL_SERVER_ERROR);
     }
 } 
 
@@ -29,7 +29,7 @@ async function getAllAirports(){
         const response = await airportRepository.getAll();
         return response;
     }catch(error){
-        throw new AppError('Can not fetch the data for this flight', StatusCodes.INTERNAL_SERVER_ERROR);
+        throw new AppError('Can not fetch the data for this flight from sevices', StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }
 
