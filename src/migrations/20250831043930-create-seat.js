@@ -33,7 +33,7 @@ module.exports = {
       type: {
         type:Sequelize.ENUM,
         values:[BUSINESS, ECONOMY, PREMIUM_ECONOMY, FIRST_CLASS],
-        default:ECONOMY,
+        defaultValue:ECONOMY,
         allowNull:false
       },
       createdAt: {
