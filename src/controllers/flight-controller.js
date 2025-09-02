@@ -74,7 +74,6 @@ async function getFlight(req,res){
     }
 }
 
-<<<<<<< HEAD
 /**
 * PATCH : /flight/flightId, seats, dec
 * req-body {}
@@ -104,10 +103,4 @@ module.exports = {
     getAllFlights,
     getFlight,
     updateSeats
-=======
-module.exports = {
-    createFlight,
-    getAllFlights,
-    getFlight
->>>>>>> e79a7f8c702e5b31c33fa47336b05ff5a9771312
 }
