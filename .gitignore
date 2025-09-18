@@ -2,4 +2,3 @@ node_modules/
 .env
 Alllogs.log
 src/config/config.js
-src/config/config.json
