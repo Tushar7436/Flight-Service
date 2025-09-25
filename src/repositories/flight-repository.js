@@ -26,15 +26,28 @@ class FlightRepository extends CrudRepository {
                 as:'departure_airport',
                 on: {
                     col1: Sequelize.where(Sequelize.col("Flight.departureAirportId"), "=", Sequelize.col("departure_airport.code"))
-                }
+                },
+                include: [
+                    {
+                        model: db.City,
+                        attributes: ['name']
+                    }
+                ]
             },
+            
             {
                 model: Airport,
                 required: true,
                 as:'arrival_airport',
                 on: {
                     col1: Sequelize.where(Sequelize.col("Flight.arrivalAirportId"), "=", Sequelize.col("arrival_airport.code"))
-                }
+                },
+                include: [
+                    {
+                        model: db.City,
+                        attributes: ['name']
+                    }
+                ]
             }
         ]
         });

@@ -1,41 +1,51 @@
 'use strict';
 const { Op } = require('sequelize');
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-   await queryInterface.bulkInsert('Airplanes',[
-    {
-      modelNumber: 'airbus340',
-      capacity:900,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      modelNumber: 'boeing777',
-      capacity:450,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }
-   ])
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Airplanes', [
+      {
+        modelNumber: 'Airbus A320neo',
+        capacity: 180,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        modelNumber: 'Boeing 737-800',
+        capacity: 189,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        modelNumber: 'Airbus A321neo',
+        capacity: 230,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        modelNumber: 'Boeing 787-8 Dreamliner',
+        capacity: 256,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        modelNumber: 'ATR 72-600',
+        capacity: 78,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ]);
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-    await queryInterface.bulkDelete('Airplanes',{[Op.or]: [{modelNumber: 'boeing777'}, {modelNumber:'airbus340'}]})
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Airplanes', {
+      [Op.or]: [
+        { modelNumber: 'Airbus A320neo' },
+        { modelNumber: 'Boeing 737-800' },
+        { modelNumber: 'Airbus A321neo' },
+        { modelNumber: 'Boeing 787-8 Dreamliner' },
+        { modelNumber: 'ATR 72-600' }
+      ]
+    });
   }
 };

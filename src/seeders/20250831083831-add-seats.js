@@ -14,56 +14,56 @@ module.exports = {
     */
    await queryInterface.bulkInsert('Seats',[
     {
-      airplaneId:1,
+      airplaneId:9,
       row:1,
       col:'A',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:1,
       col:'B',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:1,
       col:'C',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:1,
       col:'D',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:2,
       col:'A',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:2,
       col:'B',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:2,
       col:'C',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      airplaneId:1,
+      airplaneId:9,
       row:2,
       col:'D',
       createdAt: new Date(),

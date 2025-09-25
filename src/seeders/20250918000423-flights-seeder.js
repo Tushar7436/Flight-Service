@@ -4,24 +4,124 @@ const { Op } = require('sequelize');
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Flights', [
-      { id: 1, flightNumber: 'UK 808', airplaneId: 2, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-02-28 23:00:00'), departureTime: new Date('2025-02-28 19:30:00'), price: 1000, boardingGate: null, totalSeats: 90, createdAt: new Date('2025-08-29 10:30:28'), updatedAt: new Date('2025-09-02 09:41:50') },
-      { id: 2, flightNumber: 'UK 808', airplaneId: 3, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-02-28 23:00:00'), departureTime: new Date('2025-02-28 19:30:00'), price: 1000, boardingGate: null, totalSeats: 5, createdAt: new Date('2025-08-29 12:04:24'), updatedAt: new Date('2025-09-09 11:43:37') },
-      { id: 3, flightNumber: 'sukhoi 30 mki', airplaneId: 1, departureAirportId: 'BLR', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-02-28 23:00:00'), departureTime: new Date('2025-02-28 19:30:00'), price: 1000, boardingGate: null, totalSeats: 138, createdAt: new Date('2025-08-29 12:05:17'), updatedAt: new Date('2025-09-09 13:17:52') },
-      { id: 4, flightNumber: 'RAFALE', airplaneId: 1, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-02-28 23:00:00'), departureTime: new Date('2025-02-28 19:30:00'), price: 1000, boardingGate: null, totalSeats: 90, createdAt: new Date('2025-08-29 12:06:04'), updatedAt: new Date('2025-09-04 06:26:35') },
-      { id: 5, flightNumber: 'MIG30', airplaneId: 2, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-03-01 23:00:00'), departureTime: new Date('2025-02-28 19:30:00'), price: 1000, boardingGate: null, totalSeats: 0, createdAt: new Date('2025-08-30 10:22:26'), updatedAt: new Date('2025-09-16 12:44:11') },
-      { id: 6, flightNumber: 'Rocket', airplaneId: 2, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-03-11 23:00:00'), departureTime: new Date('2025-03-10 19:30:00'), price: 1000, boardingGate: null, totalSeats: 70, createdAt: new Date('2025-08-30 10:48:10'), updatedAt: new Date('2025-09-15 11:43:22') },
-      { id: 7, flightNumber: 'Rocket', airplaneId: 2, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-03-12 04:30:00'), departureTime: new Date('2025-03-11 01:00:00'), price: 1000, boardingGate: null, totalSeats: 100, createdAt: new Date('2025-08-30 11:04:20'), updatedAt: new Date('2025-08-30 11:04:20') },
-      { id: 8, flightNumber: 'Rocket', airplaneId: 2, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-03-12 04:30:00'), departureTime: new Date('2025-03-11 01:00:00'), price: 1000, boardingGate: null, totalSeats: 100, createdAt: new Date('2025-08-30 11:34:14'), updatedAt: new Date('2025-08-30 11:34:14') },
-      { id: 9, flightNumber: 'Rocket', airplaneId: 2, departureAirportId: 'DCH', arrivalAirportId: 'NGA', arrivalTime: new Date('2025-03-12 04:30:00'), departureTime: new Date('2025-03-11 01:00:00'), price: 2000, boardingGate: null, totalSeats: 100, createdAt: new Date('2025-08-30 11:44:53'), updatedAt: new Date('2025-08-30 11:44:53') },
-      { id: 10, flightNumber: 'Rocket', airplaneId: 2, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-03-12 11:30:00'), departureTime: new Date('2025-03-12 11:00:00'), price: 20200, boardingGate: null, totalSeats: 90, createdAt: new Date('2025-09-08 07:14:34'), updatedAt: new Date('2025-09-16 15:20:05') },
-      { id: 11, flightNumber: 'Vistara', airplaneId: 4, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-03-12 09:00:00'), departureTime: new Date('2025-03-12 05:30:00'), price: 20200, boardingGate: null, totalSeats: 100, createdAt: new Date('2025-09-08 07:32:23'), updatedAt: new Date('2025-09-08 07:32:23') },
-      { id: 12, flightNumber: 'Indigo', airplaneId: 4, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-03-12 09:00:00'), departureTime: new Date('2025-03-12 05:30:00'), price: 20, boardingGate: null, totalSeats: 99, createdAt: new Date('2025-09-08 07:33:14'), updatedAt: new Date('2025-09-10 18:38:12') },
-      { id: 13, flightNumber: 'AirAsia', airplaneId: 4, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-03-12 09:00:00'), departureTime: new Date('2025-03-12 05:30:00'), price: 20000, boardingGate: null, totalSeats: 2, createdAt: new Date('2025-09-08 07:35:46'), updatedAt: new Date('2025-09-08 08:52:19') },
-      { id: 14, flightNumber: 'Indigo', airplaneId: 2, departureAirportId: 'BLR', arrivalAirportId: 'BASP', arrivalTime: new Date('2025-09-12 07:00:00'), departureTime: new Date('2025-09-12 05:30:00'), price: 200, boardingGate: null, totalSeats: 198, createdAt: new Date('2025-09-09 09:22:32'), updatedAt: new Date('2025-09-17 19:11:54') },
+      {
+        id: 1,
+        flightNumber: 'AI 501',
+        airplaneId: 9, // Airbus A320neo
+        departureAirportId: 'BLR',
+        arrivalAirportId: 'DEL',
+        arrivalTime: new Date('2025-10-01 09:30:00'),
+        departureTime: new Date('2025-10-01 06:00:00'),
+        price: 5500,
+        boardingGate: 'A12',
+        totalSeats: 180,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 2,
+        flightNumber: '6E 203',
+        airplaneId: 10, // Airbus A320neo
+        departureAirportId: 'DEL',
+        arrivalAirportId: 'BOM',
+        arrivalTime: new Date('2025-10-01 12:00:00'),
+        departureTime: new Date('2025-10-01 09:30:00'),
+        price: 4800,
+        boardingGate: 'B22',
+        totalSeats: 180,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 3,
+        flightNumber: 'UK 808',
+        airplaneId: 11, // Airbus A321neo
+        departureAirportId: 'BOM',
+        arrivalAirportId: 'BLR',
+        arrivalTime: new Date('2025-10-01 20:30:00'),
+        departureTime: new Date('2025-10-01 18:00:00'),
+        price: 4200,
+        boardingGate: 'C14',
+        totalSeats: 230,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 4,
+        flightNumber: 'SG 123',
+        airplaneId: 12, // Boeing 737-800
+        departureAirportId: 'HYD',
+        arrivalAirportId: 'CCU',
+        arrivalTime: new Date('2025-09-29 11:00:00'),
+        departureTime: new Date('2025-09-29 08:30:00'),
+        price: 5600,
+        boardingGate: 'D05',
+        totalSeats: 189,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 5,
+        flightNumber: 'I5 302',
+        airplaneId: 13, // ATR 72-600
+        departureAirportId: 'PNQ',
+        arrivalAirportId: 'GOI',
+        arrivalTime: new Date('2025-09-29 14:00:00'),
+        departureTime: new Date('2025-09-29 12:30:00'),
+        price: 3500,
+        boardingGate: 'E07',
+        totalSeats: 78,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 6,
+        flightNumber: 'QP 1101',
+        airplaneId: 9, // Boeing 737-800
+        departureAirportId: 'AMD',
+        arrivalAirportId: 'DEL',
+        arrivalTime: new Date('2025-09-29 10:30:00'),
+        departureTime: new Date('2025-09-29 08:00:00'),
+        price: 4000,
+        boardingGate: 'F04',
+        totalSeats: 189,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 7,
+        flightNumber: 'AK 452',
+        airplaneId: 10, // Airbus A320neo
+        departureAirportId: 'MAA',
+        arrivalAirportId: 'BLR',
+        arrivalTime: new Date('2025-10-03 08:15:00'),
+        departureTime: new Date('2025-10-03 07:00:00'),
+        price: 2500,
+        boardingGate: 'G09',
+        totalSeats: 180,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        id: 8,
+        flightNumber: 'AI 776',
+        airplaneId: 11, // Boeing 787-8 Dreamliner
+        departureAirportId: 'CCU',
+        arrivalAirportId: 'DEL',
+        arrivalTime: new Date('2025-10-03 19:30:00'),
+        departureTime: new Date('2025-10-03 16:15:00'),
+        price: 7200,
+        boardingGate: 'H02',
+        totalSeats: 256,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
     ]);
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Flights', { id: { [Op.in]: [1,2,3,4,5,6,7,8,9,10,11,12,13,14] } });
-  }
+    await queryInterface.bulkDelete('Flights', {
+      id: { [Op.in]: [1, 2, 3, 4, 5, 6, 7, 8] },
+    });
+  },
 };
